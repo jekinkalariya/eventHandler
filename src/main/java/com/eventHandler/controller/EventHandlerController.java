@@ -2,6 +2,7 @@ package com.eventHandler.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import com.eventHandler.service.EventHandlerService;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,8 @@ public class EventHandlerController {
     @PostMapping("/event")
     public ResponseEntity eventHandler(HttpServletRequest request, @RequestBody String object) throws JSONException {
         //JSONObject object = new JSONObject(request. getHeader("body"));
-        eventHandlerService.payLoadProcess(new JSONObject(object));
-        return ResponseEntity.status(HttpStatus.OK).body("some body ");
+        eventHandlerService.payLoadProcess(new JSONArray(object));
+        return ResponseEntity.status(HttpStatus.OK).body("{'status':success}");
     }
 
     @GetMapping("/")

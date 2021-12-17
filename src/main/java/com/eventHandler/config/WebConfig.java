@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.ecw.eventHandler")
+@ComponentScan("com.eventHandler")
 public class WebConfig implements WebMvcConfigurer {
 
 }
